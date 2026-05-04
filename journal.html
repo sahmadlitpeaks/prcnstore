@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en" data-drawer-open="false" data-cart-open="false">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Precision Journal — Evidence-led wellness writing</title>
+  <meta name="description" content="Articles, study breakdowns, and Q&As with our medical board. Twice-monthly long-form, no fluff." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,aspect-ratio"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { forest:{DEFAULT:'#0E4F47',700:'#0A3B36'}, sage:{DEFAULT:'#A9C0B4',50:'#EFF3F0'}, amber2:{DEFAULT:'#C8924A',100:'#F5E7D1'}, cream:'#F7F2E8', ivory:'#FBF8F2', ink:'#1A1F1D', muted2:'#6B7470', line:'#E6DFD1', sale:'#B23A3A' },
+      fontFamily: { display:['Fraunces','Georgia','serif'], sans:['Inter','system-ui','sans-serif'] }
+    } } }
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="bg-cream text-ink antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 btn btn-primary">Skip to content</a>
+  <div data-include="partials/announcement.html"></div>
+  <div data-include="partials/header.html"></div>
+  <div data-include="partials/drawers.html"></div>
+
+  <main id="main">
+
+    <!-- ============ hero ============ -->
+    <section class="container-prcn pt-12 pb-8 text-center">
+      <p class="eyebrow">The Precision Journal</p>
+      <h1 class="font-display text-4xl sm:text-5xl lg:text-[64px] leading-[1.05] text-forest mt-3 max-w-3xl mx-auto">Evidence-led wellness, written by doctors.</h1>
+      <p class="mt-5 text-base sm:text-lg text-ink/75 max-w-xl mx-auto">Long-form study breakdowns, Q&As with our medical board, and the science behind every product on our shelf. Twice a month. No fluff.</p>
+      <div class="mt-7 flex justify-center gap-2 flex-wrap">
+        <a href="#articles" class="btn btn-primary">Read the latest</a>
+        <a href="#newsletter" class="btn btn-outline">Subscribe</a>
+      </div>
+    </section>
+
+    <!-- ============ category chips ============ -->
+    <section class="container-prcn pb-2">
+      <nav aria-label="Categories" class="flex flex-wrap justify-center gap-2">
+        <a href="#" class="chip chip-active">All</a>
+        <a href="#" class="chip">Sleep</a>
+        <a href="#" class="chip">Stress</a>
+        <a href="#" class="chip">Hormones</a>
+        <a href="#" class="chip">Gut health</a>
+        <a href="#" class="chip">Nutrition</a>
+        <a href="#" class="chip">Longevity</a>
+        <a href="#" class="chip">Skin & hair</a>
+        <a href="#" class="chip">Studies decoded</a>
+      </nav>
+    </section>
+
+    <!-- ============ featured article ============ -->
+    <section class="container-prcn mt-10">
+      <a href="#" class="card grid lg:grid-cols-2 gap-0 overflow-hidden hover:border-forest">
+        <img src="https://picsum.photos/seed/journal-feature/1200/900" class="aspect-[4/3] lg:aspect-auto w-full h-full object-cover" alt="">
+        <div class="p-8 sm:p-10 flex flex-col justify-center">
+          <p class="eyebrow">Featured · Sleep</p>
+          <h2 class="font-display text-3xl sm:text-4xl text-forest mt-3 leading-tight">Magnesium for sleep: which form actually works?</h2>
+          <p class="mt-4 text-ink/80 leading-relaxed">Glycinate, citrate, threonate, oxide — the bottle aisle is a maze. We pulled together every RCT in the last decade and ranked the forms by absorption, sleep latency and side-effect profile. The answer surprised even us.</p>
+          <div class="mt-6 flex items-center gap-3 text-xs text-muted2">
+            <img src="https://picsum.photos/seed/dr-hana/64/64" class="w-9 h-9 rounded-full object-cover" alt="">
+            <span>Dr. Hana Al-Rashid</span>
+            <span>·</span>
+            <span>8 min read</span>
+            <span>·</span>
+            <span>2 May 2026</span>
+          </div>
+        </div>
+      </a>
+    </section>
+
+    <!-- ============ articles grid ============ -->
+    <section id="articles" class="container-prcn section pt-12">
+      <div class="flex items-end justify-between flex-wrap gap-3 mb-8">
+        <div>
+          <p class="eyebrow">Latest</p>
+          <h2 class="font-display text-3xl text-forest mt-2">Recent articles</h2>
+        </div>
+        <select class="select !py-2 !pr-9 !pl-3 !text-sm !rounded-full !border-line max-w-[200px]">
+          <option>Most recent</option>
+          <option>Most read</option>
+          <option>Most cited</option>
+        </select>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="card overflow-hidden group">
+          <a href="#" class="block">
+            <img src="https://picsum.photos/seed/article-cortisol/800/600" class="w-full aspect-[4/3] object-cover group-hover:scale-[1.02] transition" alt="">
+            <div class="p-5">
+              <p class="text-[11px] uppercase tracking-wider text-amber2 font-semibold">Stress</p>
+              <h3 class="font-display text-xl mt-1 leading-snug">Reading your cortisol curve, the way clinicians actually do it</h3>
+              <p class="text-sm text-muted2 mt-2 line-clamp-2">Why the morning spike matters more than the absolute number — and how to interpret a flat curve without panicking.</p>
+              <div class="mt-4 flex items-center gap-2 text-xs text-muted2"><span>Dr. Omar Saeed</span><span>·</span><span>6 min</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="card overflow-hidden group">
+          <a href="#" class="block">
+            <img src="https://picsum.photos/seed/article-vitd/800/600" class="w-full aspect-[4/3] object-cover group-hover:scale-[1.02] transition" alt="">
+            <div class="p-5">
+              <p class="text-[11px] uppercase tracking-wider text-amber2 font-semibold">Vitamins</p>
+              <h3 class="font-display text-xl mt-1 leading-snug">Vitamin D dosing in the UAE: more sun ≠ enough D</h3>
+              <p class="text-sm text-muted2 mt-2 line-clamp-2">A surprising 70% of UAE residents test below 30 ng/mL. Here's why, and what the evidence says about smart supplementation.</p>
+              <div class="mt-4 flex items-center gap-2 text-xs text-muted2"><span>Dr. Hana Al-Rashid</span><span>·</span><span>5 min</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="card overflow-hidden group">
+          <a href="#" class="block">
+            <img src="https://picsum.photos/seed/article-gut/800/600" class="w-full aspect-[4/3] object-cover group-hover:scale-[1.02] transition" alt="">
+            <div class="p-5">
+              <p class="text-[11px] uppercase tracking-wider text-amber2 font-semibold">Gut</p>
+              <h3 class="font-display text-xl mt-1 leading-snug">Probiotics, prebiotics, postbiotics — what's the difference and which do you need?</h3>
+              <p class="text-sm text-muted2 mt-2 line-clamp-2">A simple framework for picking the right gut support based on your symptoms — and what to ignore on the label.</p>
+              <div class="mt-4 flex items-center gap-2 text-xs text-muted2"><span>Dr. Omar Saeed</span><span>·</span><span>9 min</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="card overflow-hidden group">
+          <a href="#" class="block">
+            <img src="https://picsum.photos/seed/article-vagus/800/600" class="w-full aspect-[4/3] object-cover group-hover:scale-[1.02] transition" alt="">
+            <div class="p-5">
+              <p class="text-[11px] uppercase tracking-wider text-amber2 font-semibold">Devices</p>
+              <h3 class="font-display text-xl mt-1 leading-snug">Vagus nerve stimulation: the science behind Nurosym</h3>
+              <p class="text-sm text-muted2 mt-2 line-clamp-2">tVNS isn't woo — it's CE-marked, RCT-tested, and surprisingly straightforward. We unpack the mechanism in plain English.</p>
+              <div class="mt-4 flex items-center gap-2 text-xs text-muted2"><span>Dr. Leila Hashemi</span><span>·</span><span>11 min</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="card overflow-hidden group">
+          <a href="#" class="block">
+            <img src="https://picsum.photos/seed/article-collagen/800/600" class="w-full aspect-[4/3] object-cover group-hover:scale-[1.02] transition" alt="">
+            <div class="p-5">
+              <p class="text-[11px] uppercase tracking-wider text-amber2 font-semibold">Skin & hair</p>
+              <h3 class="font-display text-xl mt-1 leading-snug">Does collagen actually do anything? A study round-up</h3>
+              <p class="text-sm text-muted2 mt-2 line-clamp-2">Spoiler: yes — but only if it's the right molecular weight, the right dose, and given long enough.</p>
+              <div class="mt-4 flex items-center gap-2 text-xs text-muted2"><span>Dr. Hana Al-Rashid</span><span>·</span><span>7 min</span></div>
+            </div>
+          </a>
+        </article>
+
+        <article class="card overflow-hidden group">
+          <a href="#" class="block">
+            <img src="https://picsum.photos/seed/article-fasting/800/600" class="w-full aspect-[4/3] object-cover group-hover:scale-[1.02] transition" alt="">
+            <div class="p-5">
+              <p class="text-[11px] uppercase tracking-wider text-amber2 font-semibold">Longevity</p>
+              <h3 class="font-display text-xl mt-1 leading-snug">Time-restricted eating in Ramadan — what the data shows</h3>
+              <p class="text-sm text-muted2 mt-2 line-clamp-2">Metabolic markers, cognition, sleep. We pull together the recent UAE-specific research and a sensible protocol.</p>
+              <div class="mt-4 flex items-center gap-2 text-xs text-muted2"><span>Dr. Omar Saeed</span><span>·</span><span>10 min</span></div>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <!-- pagination / load more -->
+      <div class="mt-12 text-center">
+        <button class="btn btn-outline btn-lg">Load more articles</button>
+      </div>
+    </section>
+
+    <!-- ============ topics navigator ============ -->
+    <section class="bg-ivory border-y border-line">
+      <div class="container-prcn section">
+        <div class="text-center max-w-2xl mx-auto">
+          <p class="eyebrow">Browse by topic</p>
+          <h2 class="font-display text-3xl sm:text-4xl text-forest mt-2">Find your rabbit hole.</h2>
+        </div>
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <a class="card p-6 hover:border-forest" href="#"><i data-lucide="moon" class="w-6 h-6 text-forest"></i><h3 class="font-display text-lg mt-3">Sleep</h3><p class="text-xs text-muted2">14 articles</p></a>
+          <a class="card p-6 hover:border-forest" href="#"><i data-lucide="zap" class="w-6 h-6 text-forest"></i><h3 class="font-display text-lg mt-3">Stress</h3><p class="text-xs text-muted2">11 articles</p></a>
+          <a class="card p-6 hover:border-forest" href="#"><i data-lucide="leaf" class="w-6 h-6 text-forest"></i><h3 class="font-display text-lg mt-3">Hormones</h3><p class="text-xs text-muted2">9 articles</p></a>
+          <a class="card p-6 hover:border-forest" href="#"><i data-lucide="activity" class="w-6 h-6 text-forest"></i><h3 class="font-display text-lg mt-3">Gut health</h3><p class="text-xs text-muted2">12 articles</p></a>
+          <a class="card p-6 hover:border-forest" href="#"><i data-lucide="droplet" class="w-6 h-6 text-forest"></i><h3 class="font-display text-lg mt-3">Nutrition</h3><p class="text-xs text-muted2">22 articles</p></a>
+          <a class="card p-6 hover:border-forest" href="#"><i data-lucide="microscope" class="w-6 h-6 text-forest"></i><h3 class="font-display text-lg mt-3">Studies decoded</h3><p class="text-xs text-muted2">18 articles</p></a>
+          <a class="card p-6 hover:border-forest" href="#"><i data-lucide="sparkles" class="w-6 h-6 text-forest"></i><h3 class="font-display text-lg mt-3">Skin & hair</h3><p class="text-xs text-muted2">8 articles</p></a>
+          <a class="card p-6 hover:border-forest" href="#"><i data-lucide="hourglass" class="w-6 h-6 text-forest"></i><h3 class="font-display text-lg mt-3">Longevity</h3><p class="text-xs text-muted2">7 articles</p></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ newsletter ============ -->
+    <section id="newsletter" class="container-prcn pb-20">
+      <div class="rounded-3xl bg-amber2-100 border border-amber2/30 p-8 sm:p-12 lg:p-16 grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <p class="eyebrow">Subscribe</p>
+          <h2 class="font-display text-3xl sm:text-4xl text-forest mt-2">Twice a month, in your inbox.</h2>
+          <p class="mt-3 text-ink/75">Long-form articles, study summaries and reader Q&As — straight from our medical board.</p>
+        </div>
+        <form class="flex flex-col sm:flex-row gap-2">
+          <label class="sr-only" for="news">Email</label>
+          <input id="news" type="email" required class="input" placeholder="you@email.com">
+          <button class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/include.js"></script>
+</body>
+</html>
