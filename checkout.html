@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en" data-drawer-open="false" data-cart-open="false">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout — Precision Wellness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,aspect-ratio"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { forest:{DEFAULT:'#0E4F47',700:'#0A3B36'}, sage:{DEFAULT:'#A9C0B4',50:'#EFF3F0'}, amber2:{DEFAULT:'#C8924A',100:'#F5E7D1'}, cream:'#F7F2E8', ivory:'#FBF8F2', ink:'#1A1F1D', muted2:'#6B7470', line:'#E6DFD1', sale:'#B23A3A' },
+      fontFamily: { display:['Fraunces','Georgia','serif'], sans:['Inter','system-ui','sans-serif'] }
+    } } }
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="bg-cream text-ink antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 btn btn-primary">Skip to content</a>
+
+  <!-- Slim checkout header (no nav, no announcement) -->
+  <header class="bg-ivory border-b border-line">
+    <div class="container-prcn flex items-center gap-4 py-4">
+      <a href="index.html" class="font-display text-2xl font-semibold text-forest">Precision<span class="text-amber2">·</span>Wellness</a>
+      <span class="ml-auto inline-flex items-center gap-2 text-xs text-muted2"><i data-lucide="lock" class="w-4 h-4 text-forest"></i> Secure checkout</span>
+      <a href="cart.html" class="hidden sm:inline-flex text-sm hover:text-forest"><i data-lucide="shopping-bag" class="w-4 h-4 inline"></i> Edit bag</a>
+    </div>
+  </header>
+
+  <main id="main" class="container-prcn pt-8 pb-20">
+    <!-- returning customer bar -->
+    <div class="rounded-2xl bg-amber2-100/70 border border-amber2/30 p-4 flex flex-wrap gap-3 items-center justify-between text-sm">
+      <p class="flex items-center gap-2"><i data-lucide="user-round" class="w-4 h-4 text-amber2"></i> <strong>Returning customer?</strong> Sign in for faster checkout.</p>
+      <a href="account.html" class="btn btn-outline btn-sm">Sign in</a>
+    </div>
+
+    <h1 class="sr-only">Checkout</h1>
+
+    <div class="mt-8 grid lg:grid-cols-[1fr_400px] gap-10">
+
+      <!-- ===== form ===== -->
+      <form class="space-y-8">
+        <!-- express -->
+        <section>
+          <p class="eyebrow mb-3">Express checkout</p>
+          <div class="grid grid-cols-3 gap-3">
+            <button type="button" class="btn btn-outline">Apple Pay</button>
+            <button type="button" class="btn btn-outline">Tabby</button>
+            <button type="button" class="btn btn-outline">Tamara</button>
+          </div>
+          <div class="flex items-center gap-3 my-6 text-xs text-muted2"><span class="flex-1 h-px bg-line"></span> or pay another way <span class="flex-1 h-px bg-line"></span></div>
+        </section>
+
+        <!-- step 1: contact -->
+        <section class="card p-6">
+          <div class="flex items-center justify-between mb-5">
+            <h2 class="font-display text-2xl flex items-center gap-2"><span class="w-7 h-7 rounded-full bg-forest text-ivory grid place-items-center text-xs">1</span> Contact</h2>
+            <a href="#" class="text-sm text-muted2 hover:text-forest">Use saved →</a>
+          </div>
+          <label class="label" for="email">Email</label>
+          <input id="email" type="email" class="input" placeholder="you@email.com" required>
+          <label class="flex items-center gap-2 mt-3 text-sm"><input type="checkbox" class="rounded text-forest"> Email me with news, science articles and offers (optional)</label>
+        </section>
+
+        <!-- step 2: delivery -->
+        <section class="card p-6">
+          <h2 class="font-display text-2xl flex items-center gap-2 mb-5"><span class="w-7 h-7 rounded-full bg-forest text-ivory grid place-items-center text-xs">2</span> Delivery</h2>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div><label class="label">First name</label><input class="input" required></div>
+            <div><label class="label">Last name</label><input class="input" required></div>
+          </div>
+          <div class="mt-3"><label class="label">Mobile number</label>
+            <div class="flex gap-2">
+              <select class="select max-w-[110px]"><option>+971</option><option>+966</option><option>+965</option></select>
+              <input class="input" type="tel" placeholder="50 123 4567" required>
+            </div>
+            <p class="text-[11px] text-muted2 mt-1">For courier delivery updates only.</p>
+          </div>
+          <div class="mt-3"><label class="label">Address line 1</label><input class="input" placeholder="Building, street" required></div>
+          <div class="mt-3"><label class="label">Address line 2 <span class="text-muted2 font-normal">(optional)</span></label><input class="input" placeholder="Apartment, floor"></div>
+          <div class="grid grid-cols-2 gap-3 mt-3">
+            <div><label class="label">City</label>
+              <select class="select" required>
+                <option>Dubai</option><option>Abu Dhabi</option><option>Sharjah</option><option>Ajman</option><option>Ras Al Khaimah</option><option>Fujairah</option><option>Umm Al Quwain</option>
+              </select>
+            </div>
+            <div><label class="label">Area / community</label><input class="input" placeholder="e.g. Jumeirah 3"></div>
+          </div>
+
+          <label class="flex items-center gap-2 mt-4 text-sm"><input type="checkbox" class="rounded text-forest"> Save this address to my account</label>
+        </section>
+
+        <!-- step 3: shipping -->
+        <section class="card p-6">
+          <h2 class="font-display text-2xl flex items-center gap-2 mb-5"><span class="w-7 h-7 rounded-full bg-forest text-ivory grid place-items-center text-xs">3</span> Shipping method</h2>
+          <div class="space-y-2">
+            <label class="flex items-center justify-between gap-3 border border-forest bg-sage-50 rounded-xl p-4 cursor-pointer">
+              <span class="flex items-center gap-3">
+                <input type="radio" name="ship" class="text-forest" checked>
+                <span>
+                  <span class="block font-semibold text-sm">Standard delivery · 1–3 business days</span>
+                  <span class="block text-xs text-muted2">Tracked, contactless drop-off</span>
+                </span>
+              </span>
+              <span class="font-semibold">AED 25</span>
+            </label>
+            <label class="flex items-center justify-between gap-3 border border-line rounded-xl p-4 cursor-pointer hover:border-forest">
+              <span class="flex items-center gap-3">
+                <input type="radio" name="ship" class="text-forest">
+                <span>
+                  <span class="block font-semibold text-sm">Same-day · Dubai only</span>
+                  <span class="block text-xs text-muted2">Order before 2 pm</span>
+                </span>
+              </span>
+              <span class="font-semibold">AED 45</span>
+            </label>
+            <label class="flex items-center justify-between gap-3 border border-line rounded-xl p-4 cursor-pointer hover:border-forest">
+              <span class="flex items-center gap-3">
+                <input type="radio" name="ship" class="text-forest">
+                <span>
+                  <span class="block font-semibold text-sm">DHA-approved courier · sample pickup</span>
+                  <span class="block text-xs text-muted2">For Precision Chex™ test kits</span>
+                </span>
+              </span>
+              <span class="font-semibold">Free</span>
+            </label>
+          </div>
+        </section>
+
+        <!-- step 4: payment -->
+        <section class="card p-6">
+          <h2 class="font-display text-2xl flex items-center gap-2 mb-5"><span class="w-7 h-7 rounded-full bg-forest text-ivory grid place-items-center text-xs">4</span> Payment</h2>
+          <p class="text-xs text-muted2 mb-4">All transactions are secure and encrypted.</p>
+
+          <div class="space-y-2">
+            <label class="block border border-forest bg-sage-50 rounded-xl p-4 cursor-pointer">
+              <span class="flex items-center justify-between">
+                <span class="flex items-center gap-3"><input type="radio" name="pay" class="text-forest" checked> <span class="font-semibold text-sm">Credit / debit card</span></span>
+                <span class="flex items-center gap-1"><span class="pay-pill">VISA</span><span class="pay-pill">MC</span><span class="pay-pill">AMEX</span></span>
+              </span>
+              <div class="grid grid-cols-2 gap-3 mt-4">
+                <div class="col-span-2"><label class="label">Card number</label><input class="input" placeholder="1234 5678 9012 3456" inputmode="numeric"></div>
+                <div><label class="label">Expiry</label><input class="input" placeholder="MM / YY" inputmode="numeric"></div>
+                <div><label class="label">CVC</label><input class="input" placeholder="123" inputmode="numeric"></div>
+                <div class="col-span-2"><label class="label">Name on card</label><input class="input"></div>
+              </div>
+            </label>
+
+            <label class="flex items-center justify-between gap-3 border border-line rounded-xl p-4 cursor-pointer hover:border-forest">
+              <span class="flex items-center gap-3"><input type="radio" name="pay" class="text-forest"><span class="font-semibold text-sm">Apple Pay</span></span>
+              <span class="text-xs text-muted2">Touch ID / Face ID</span>
+            </label>
+            <label class="flex items-center justify-between gap-3 border border-line rounded-xl p-4 cursor-pointer hover:border-forest">
+              <span class="flex items-center gap-3"><input type="radio" name="pay" class="text-forest"><span class="font-semibold text-sm">Tabby — pay in 4</span></span>
+              <span class="text-xs text-muted2">No fees, no interest</span>
+            </label>
+            <label class="flex items-center justify-between gap-3 border border-line rounded-xl p-4 cursor-pointer hover:border-forest">
+              <span class="flex items-center gap-3"><input type="radio" name="pay" class="text-forest"><span class="font-semibold text-sm">Tamara</span></span>
+              <span class="text-xs text-muted2">Pay later, split in 3</span>
+            </label>
+            <label class="flex items-center justify-between gap-3 border border-line rounded-xl p-4 cursor-pointer hover:border-forest">
+              <span class="flex items-center gap-3"><input type="radio" name="pay" class="text-forest"><span class="font-semibold text-sm">Cash on delivery</span></span>
+              <span class="text-xs text-muted2">+ AED 15 fee</span>
+            </label>
+          </div>
+
+          <label class="flex items-start gap-2 mt-5 text-xs text-ink/80"><input type="checkbox" class="rounded text-forest mt-0.5" required> By placing this order I accept the <a class="underline" href="#">terms</a>, <a class="underline" href="#">privacy</a> and <a class="underline" href="#">refund policy</a>.</label>
+
+          <button class="btn btn-primary btn-block btn-lg mt-6"><i data-lucide="lock" class="w-4 h-4"></i> Place order · AED 405</button>
+        </section>
+      </form>
+
+      <!-- ===== order summary ===== -->
+      <aside class="lg:sticky lg:top-6 self-start">
+        <div class="card p-6">
+          <details class="acc" open>
+            <summary class="font-display text-xl">Order summary <span class="text-sm text-muted2 font-normal">· 2 items</span></summary>
+            <ul class="space-y-4 mt-3">
+              <li class="flex gap-3">
+                <div class="relative shrink-0">
+                  <img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?q=80&w=160&auto=format&fit=crop" class="w-16 h-16 rounded-xl object-cover" alt="">
+                  <span class="absolute -top-2 -right-2 w-5 h-5 grid place-items-center rounded-full bg-forest text-ivory text-[11px] font-semibold">1</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-sm">Pain Ease™</p><p class="text-xs text-muted2">60 caps · Subscribe & save</p>
+                </div>
+                <span class="font-semibold text-sm">AED 220</span>
+              </li>
+              <li class="flex gap-3">
+                <div class="relative shrink-0">
+                  <img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=160&auto=format&fit=crop" class="w-16 h-16 rounded-xl object-cover" alt="">
+                  <span class="absolute -top-2 -right-2 w-5 h-5 grid place-items-center rounded-full bg-forest text-ivory text-[11px] font-semibold">2</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="font-semibold text-sm">Lavender Essential Oil</p><p class="text-xs text-muted2">15 ml · ×2</p>
+                </div>
+                <span class="font-semibold text-sm">AED 160</span>
+              </li>
+            </ul>
+          </details>
+
+          <div class="divider my-5"></div>
+
+          <div class="flex gap-2">
+            <input class="input" placeholder="Discount code">
+            <button class="btn btn-outline btn-sm">Apply</button>
+          </div>
+
+          <dl class="space-y-2 text-sm mt-5">
+            <div class="flex justify-between"><dt>Subtotal</dt><dd>AED 380.00</dd></div>
+            <div class="flex justify-between"><dt>Shipping</dt><dd>AED 25.00</dd></div>
+            <div class="flex justify-between text-muted2 text-xs"><dt>VAT (incl.)</dt><dd>AED 18.10</dd></div>
+          </dl>
+
+          <div class="flex items-baseline justify-between mt-4">
+            <span class="font-display text-lg">Total</span>
+            <span class="font-display text-2xl text-forest">AED 405.00</span>
+          </div>
+          <p class="text-[11px] text-muted2 mt-1">or 4× <strong>AED 101.25</strong> with Tabby</p>
+
+          <ul class="mt-5 space-y-2 text-xs text-ink/80">
+            <li class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-forest"></i> 256-bit SSL · PCI-compliant</li>
+            <li class="flex items-center gap-2"><i data-lucide="rotate-ccw" class="w-4 h-4 text-forest"></i> 30-day money-back guarantee</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Slim checkout footer (legal only) -->
+  <footer class="border-t border-line bg-ivory">
+    <div class="container-prcn py-6 flex flex-col sm:flex-row gap-3 items-center justify-between text-xs text-muted2">
+      <p>© <span data-year>2026</span> Precision Wellness FZ-LLC.</p>
+      <div class="flex gap-4">
+        <a class="hover:text-forest" href="#">Privacy</a>
+        <a class="hover:text-forest" href="#">Terms</a>
+        <a class="hover:text-forest" href="#">Refunds</a>
+        <a class="hover:text-forest" href="#">Help</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/include.js"></script>
+</body>
+</html>

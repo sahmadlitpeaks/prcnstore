@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en" data-drawer-open="false" data-cart-open="false">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My account — Precision Wellness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,aspect-ratio"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { forest:{DEFAULT:'#0E4F47',700:'#0A3B36'}, sage:{DEFAULT:'#A9C0B4',50:'#EFF3F0'}, amber2:{DEFAULT:'#C8924A',100:'#F5E7D1'}, cream:'#F7F2E8', ivory:'#FBF8F2', ink:'#1A1F1D', muted2:'#6B7470', line:'#E6DFD1', sale:'#B23A3A' },
+      fontFamily: { display:['Fraunces','Georgia','serif'], sans:['Inter','system-ui','sans-serif'] }
+    } } }
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="bg-cream text-ink antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 btn btn-primary">Skip to content</a>
+  <div data-include="partials/announcement.html"></div>
+  <div data-include="partials/header.html"></div>
+  <div data-include="partials/drawers.html"></div>
+
+  <main id="main" class="container-prcn pt-8 pb-20">
+    <div class="flex items-end justify-between flex-wrap gap-3">
+      <div>
+        <p class="eyebrow">My account</p>
+        <h1 class="font-display text-3xl sm:text-4xl text-forest mt-1">Hi, Layla 👋</h1>
+        <p class="text-muted2 mt-1 text-sm">Manage your orders, test results, addresses and more.</p>
+      </div>
+      <a href="#" class="btn btn-ghost btn-sm"><i data-lucide="log-out" class="w-4 h-4"></i> Log out</a>
+    </div>
+
+    <!-- mobile section selector -->
+    <div class="lg:hidden mt-6">
+      <label class="label" for="acct-sel">Section</label>
+      <select id="acct-sel" class="select" data-account-select>
+        <option value="dashboard">Dashboard</option>
+        <option value="orders">Orders</option>
+        <option value="tests">Test results</option>
+        <option value="coaching">Coaching sessions</option>
+        <option value="address">Addresses</option>
+        <option value="payment">Payment methods</option>
+        <option value="wishlist">Wishlist</option>
+        <option value="details">Account details</option>
+      </select>
+    </div>
+
+    <div class="mt-8 grid lg:grid-cols-[260px_1fr] gap-8">
+
+      <!-- ====== component: account sidebar ====== -->
+      <aside class="hidden lg:block">
+        <nav class="card p-3 sticky top-24">
+          <ul class="space-y-1 text-sm">
+            <li><a class="flex items-center gap-3 px-3 py-2 rounded-xl bg-sage-50 text-forest font-semibold" href="#"><i data-lucide="layout-dashboard" class="w-4 h-4"></i> Dashboard</a></li>
+            <li><a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-sage-50" href="#"><i data-lucide="package" class="w-4 h-4"></i> Orders</a></li>
+            <li><a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-sage-50" href="#"><i data-lucide="test-tube" class="w-4 h-4"></i> Test results <span class="ml-auto chip">2 new</span></a></li>
+            <li><a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-sage-50" href="#"><i data-lucide="user-round" class="w-4 h-4"></i> Coaching sessions</a></li>
+            <li><a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-sage-50" href="#"><i data-lucide="repeat" class="w-4 h-4"></i> Subscriptions</a></li>
+            <li><a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-sage-50" href="#"><i data-lucide="map-pin" class="w-4 h-4"></i> Addresses</a></li>
+            <li><a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-sage-50" href="#"><i data-lucide="credit-card" class="w-4 h-4"></i> Payment methods</a></li>
+            <li><a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-sage-50" href="#"><i data-lucide="heart" class="w-4 h-4"></i> Wishlist</a></li>
+            <li><a class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-sage-50" href="#"><i data-lucide="settings" class="w-4 h-4"></i> Account details</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <div class="space-y-6">
+        <!-- DASHBOARD -->
+        <div data-account-panel="dashboard" class="space-y-6">
+          <!-- summary cards -->
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div class="card p-5">
+              <p class="text-xs text-muted2">Total orders</p>
+              <p class="font-display text-3xl mt-1">14</p>
+              <p class="text-xs text-amber2 mt-1">3 active</p>
+            </div>
+            <div class="card p-5">
+              <p class="text-xs text-muted2">Tests completed</p>
+              <p class="font-display text-3xl mt-1">2</p>
+              <p class="text-xs text-forest mt-1">Cortisol Chex · Gut Chex</p>
+            </div>
+            <div class="card p-5">
+              <p class="text-xs text-muted2">Reward credit</p>
+              <p class="font-display text-3xl mt-1">AED 75</p>
+              <p class="text-xs text-muted2 mt-1">Use at next checkout</p>
+            </div>
+          </div>
+
+          <!-- recent order -->
+          <section class="card p-6">
+            <div class="flex items-end justify-between gap-3 mb-5">
+              <h2 class="font-display text-2xl">Recent order</h2>
+              <a href="#" class="text-sm text-muted2 hover:text-forest">All orders →</a>
+            </div>
+            <div class="grid sm:grid-cols-[auto_1fr_auto] items-center gap-5">
+              <div class="flex -space-x-3">
+                <img class="w-14 h-14 rounded-xl object-cover ring-2 ring-ivory" src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?q=80&w=160&auto=format&fit=crop" alt="">
+                <img class="w-14 h-14 rounded-xl object-cover ring-2 ring-ivory" src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=160&auto=format&fit=crop" alt="">
+              </div>
+              <div>
+                <p class="font-semibold">#PRCN-21984</p>
+                <p class="text-xs text-muted2">Placed 2 May 2026 · 2 items · AED 405.00</p>
+                <p class="mt-1 text-xs text-forest font-semibold flex items-center gap-1"><i data-lucide="truck" class="w-3.5 h-3.5"></i> Out for delivery · ETA today</p>
+              </div>
+              <div class="flex sm:flex-col gap-2">
+                <a href="#" class="btn btn-outline btn-sm">Track</a>
+                <a href="#" class="btn btn-ghost btn-sm">Reorder</a>
+              </div>
+            </div>
+          </section>
+
+          <!-- wellness profile -->
+          <section class="card p-6">
+            <h2 class="font-display text-2xl mb-4">Your wellness profile</h2>
+            <div class="flex flex-wrap gap-2">
+              <span class="chip chip-active">Sleep</span>
+              <span class="chip chip-active">Stress</span>
+              <span class="chip chip-active">Hormones</span>
+              <span class="chip">+ Add concern</span>
+            </div>
+            <div class="grid sm:grid-cols-3 gap-3 mt-5 text-sm">
+              <div class="rounded-xl bg-sage-50 p-4"><p class="text-xs text-muted2">Last cortisol AM</p><p class="font-display text-xl text-forest">14.2 µg/dL</p></div>
+              <div class="rounded-xl bg-sage-50 p-4"><p class="text-xs text-muted2">Vitamin D</p><p class="font-display text-xl text-forest">38 ng/mL</p></div>
+              <div class="rounded-xl bg-sage-50 p-4"><p class="text-xs text-muted2">Gut diversity</p><p class="font-display text-xl text-forest">High</p></div>
+            </div>
+          </section>
+
+          <!-- two-up -->
+          <div class="grid lg:grid-cols-2 gap-6">
+            <section class="card p-6">
+              <h2 class="font-display text-xl mb-3">Default address</h2>
+              <p class="text-sm text-ink/80">Layla M.<br>Villa 14, Jumeirah 3<br>Dubai · UAE<br>+971 50 123 4567</p>
+              <div class="flex gap-2 mt-4">
+                <button class="btn btn-outline btn-sm">Edit</button>
+                <button class="btn btn-ghost btn-sm">Add new</button>
+              </div>
+            </section>
+            <section class="card p-6">
+              <h2 class="font-display text-xl mb-3">Next coaching session</h2>
+              <p class="text-sm"><strong>Stress reset · 1:1</strong> with Dr. Hana Al-Rashid</p>
+              <p class="text-xs text-muted2 mt-1"><i data-lucide="calendar" class="w-3.5 h-3.5 inline mr-1"></i> Sat 9 May, 10:00 GST · 45 min · Online</p>
+              <div class="flex gap-2 mt-4">
+                <a href="#" class="btn btn-primary btn-sm">Join call</a>
+                <a href="#" class="btn btn-ghost btn-sm">Reschedule</a>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- ORDERS -->
+        <div data-account-panel="orders" hidden>
+          <section class="card overflow-hidden">
+            <table class="w-full text-sm">
+              <thead class="bg-sage-50 text-left">
+                <tr><th class="p-4">Order</th><th class="p-4">Date</th><th class="p-4">Items</th><th class="p-4">Total</th><th class="p-4">Status</th><th></th></tr>
+              </thead>
+              <tbody class="divide-y divide-line">
+                <tr><td class="p-4 font-mono text-xs">#PRCN-21984</td><td class="p-4">2 May 2026</td><td class="p-4">2</td><td class="p-4">AED 405</td><td class="p-4"><span class="chip chip-active">Out for delivery</span></td><td class="p-4"><a class="btn btn-ghost btn-sm" href="#">View</a></td></tr>
+                <tr><td class="p-4 font-mono text-xs">#PRCN-21412</td><td class="p-4">14 Apr 2026</td><td class="p-4">3</td><td class="p-4">AED 612</td><td class="p-4"><span class="chip">Delivered</span></td><td class="p-4"><a class="btn btn-ghost btn-sm" href="#">View</a></td></tr>
+                <tr><td class="p-4 font-mono text-xs">#PRCN-20889</td><td class="p-4">28 Mar 2026</td><td class="p-4">1</td><td class="p-4">AED 220</td><td class="p-4"><span class="chip">Delivered</span></td><td class="p-4"><a class="btn btn-ghost btn-sm" href="#">View</a></td></tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+
+        <!-- TESTS -->
+        <div data-account-panel="tests" hidden class="space-y-4">
+          <section class="card p-6 grid sm:grid-cols-[80px_1fr_auto] gap-5 items-center">
+            <div class="w-16 h-16 rounded-xl bg-sage-50 grid place-items-center"><i data-lucide="test-tube" class="w-8 h-8 text-forest"></i></div>
+            <div>
+              <p class="font-display text-lg">Cortisol Chex</p>
+              <p class="text-xs text-muted2">Sample collected 22 Apr · Results ready</p>
+            </div>
+            <div class="flex gap-2"><a href="#" class="btn btn-primary btn-sm">View results</a><a href="#" class="btn btn-ghost btn-sm">Book follow-up</a></div>
+          </section>
+          <section class="card p-6 grid sm:grid-cols-[80px_1fr_auto] gap-5 items-center">
+            <div class="w-16 h-16 rounded-xl bg-sage-50 grid place-items-center"><i data-lucide="test-tube" class="w-8 h-8 text-forest"></i></div>
+            <div>
+              <p class="font-display text-lg">Gut Chex</p>
+              <p class="text-xs text-muted2">Sample collected 8 Apr · Results ready</p>
+            </div>
+            <div class="flex gap-2"><a href="#" class="btn btn-primary btn-sm">View results</a><a href="#" class="btn btn-ghost btn-sm">Book follow-up</a></div>
+          </section>
+        </div>
+
+        <!-- placeholder panels -->
+        <div data-account-panel="coaching" hidden><div class="card p-6">Coaching sessions list goes here.</div></div>
+        <div data-account-panel="address" hidden><div class="card p-6">Address book goes here.</div></div>
+        <div data-account-panel="payment" hidden><div class="card p-6">Saved cards & payment methods.</div></div>
+        <div data-account-panel="wishlist" hidden><div class="card p-6">Saved-for-later products.</div></div>
+        <div data-account-panel="details" hidden><div class="card p-6">Profile, password, preferences.</div></div>
+      </div>
+    </div>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/include.js"></script>
+</body>
+</html>

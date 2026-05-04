@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en" data-drawer-open="false" data-cart-open="false">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Search results — Precision Wellness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,aspect-ratio"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { forest:{DEFAULT:'#0E4F47',700:'#0A3B36'}, sage:{DEFAULT:'#A9C0B4',50:'#EFF3F0'}, amber2:{DEFAULT:'#C8924A',100:'#F5E7D1'}, cream:'#F7F2E8', ivory:'#FBF8F2', ink:'#1A1F1D', muted2:'#6B7470', line:'#E6DFD1', sale:'#B23A3A' },
+      fontFamily: { display:['Fraunces','Georgia','serif'], sans:['Inter','system-ui','sans-serif'] }
+    } } }
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="bg-cream text-ink antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 btn btn-primary">Skip to content</a>
+  <div data-include="partials/announcement.html"></div>
+  <div data-include="partials/header.html"></div>
+  <div data-include="partials/drawers.html"></div>
+
+  <main id="main" class="container-prcn pt-8 pb-20">
+
+    <form class="max-w-3xl">
+      <label class="label">Search</label>
+      <div class="relative">
+        <i data-lucide="search" class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-muted2"></i>
+        <input type="search" class="input !pl-12 !py-4 !text-lg" value="magnesium" />
+        <button class="btn btn-primary absolute right-1 top-1/2 -translate-y-1/2">Search</button>
+      </div>
+    </form>
+
+    <p class="text-sm text-muted2 mt-4"><strong class="text-ink">12</strong> results for <em class="text-forest not-italic font-semibold">"magnesium"</em></p>
+
+    <!-- suggestion chips -->
+    <div class="mt-4 flex flex-wrap gap-2">
+      <span class="chip chip-active">All</span>
+      <span class="chip">Supplements (8)</span>
+      <span class="chip">Bundles (2)</span>
+      <span class="chip">Tests (1)</span>
+      <span class="chip">Articles (1)</span>
+    </div>
+
+    <!-- did you mean -->
+    <p class="text-xs text-muted2 mt-3">Did you mean: <a class="underline hover:text-forest" href="#">magnesium glycinate</a> · <a class="underline hover:text-forest" href="#">magnesium citrate</a> · <a class="underline hover:text-forest" href="#">magnesium for sleep</a></p>
+
+    <!-- results grid -->
+    <div class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <article class="card product-card group">
+        <a href="product.html" class="block product-image">
+          <span class="absolute top-3 left-3 z-10 badge badge-bestseller">Bestseller</span>
+          <img src="https://images.unsplash.com/photo-1584362917165-526a968579e8?q=80&w=800&auto=format&fit=crop" alt="" loading="lazy" />
+          <div class="quick-add"><button class="btn btn-primary btn-block btn-sm">Add</button></div>
+        </a>
+        <div class="p-4">
+          <p class="text-[11px] uppercase text-muted2">Sleep</p>
+          <h3 class="font-display text-base mt-1">Magnesium Glycinate 400 mg</h3>
+          <p class="text-xs text-muted2 mt-1"><span class="bg-amber2-100 px-1 rounded">Magnesium</span> chelated with glycine for superior absorption…</p>
+          <p class="price-now mt-2">AED 95</p>
+        </div>
+      </article>
+      <article class="card product-card group">
+        <a href="product.html" class="block product-image">
+          <img src="https://images.unsplash.com/photo-1556228720-da4cc56b9f1f?q=80&w=800&auto=format&fit=crop" alt="" loading="lazy" />
+          <div class="quick-add"><button class="btn btn-primary btn-block btn-sm">Add</button></div>
+        </a>
+        <div class="p-4">
+          <p class="text-[11px] uppercase text-muted2">Stress</p>
+          <h3 class="font-display text-base mt-1">Magnesium Citrate 200 mg</h3>
+          <p class="text-xs text-muted2 mt-1">Highly bioavailable form of <span class="bg-amber2-100 px-1 rounded">magnesium</span>…</p>
+          <p class="price-now mt-2">AED 80</p>
+        </div>
+      </article>
+      <article class="card product-card group">
+        <a href="product.html" class="block product-image">
+          <span class="absolute top-3 left-3 z-10 badge badge-soft">Bundle</span>
+          <img src="https://images.unsplash.com/photo-1631549840906-c95dd2c53cdd?q=80&w=800&auto=format&fit=crop" alt="" loading="lazy" />
+          <div class="quick-add"><button class="btn btn-primary btn-block btn-sm">Add</button></div>
+        </a>
+        <div class="p-4">
+          <p class="text-[11px] uppercase text-muted2">Bundle</p>
+          <h3 class="font-display text-base mt-1">Sleep Stack — 3 products</h3>
+          <p class="text-xs text-muted2 mt-1">Includes <span class="bg-amber2-100 px-1 rounded">magnesium</span> glycinate, melatonin, lavender oil…</p>
+          <p class="price-now mt-2">AED 360 <span class="price-was text-xs">AED 430</span></p>
+        </div>
+      </article>
+      <article class="card product-card group">
+        <a href="product.html" class="block product-image">
+          <span class="absolute top-3 left-3 z-10 badge badge-new">New</span>
+          <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop" alt="" loading="lazy" />
+          <div class="quick-add"><button class="btn btn-primary btn-block btn-sm">Add</button></div>
+        </a>
+        <div class="p-4">
+          <p class="text-[11px] uppercase text-muted2">Topical</p>
+          <h3 class="font-display text-base mt-1">Magnesium Body Spray</h3>
+          <p class="text-xs text-muted2 mt-1">Transdermal <span class="bg-amber2-100 px-1 rounded">magnesium</span> chloride for muscle relief…</p>
+          <p class="price-now mt-2">AED 120</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- article result -->
+    <section class="mt-12">
+      <p class="eyebrow">From The Precision Journal</p>
+      <a href="#" class="card p-6 block grid sm:grid-cols-[200px_1fr] gap-5 mt-3 hover:border-forest">
+        <img src="https://images.unsplash.com/photo-1535914254981-b5012eebbd15?q=80&w=400&auto=format&fit=crop" class="rounded-xl aspect-video sm:aspect-square object-cover" alt="">
+        <div>
+          <p class="text-xs text-muted2">Article · 6 min read</p>
+          <h3 class="font-display text-2xl text-forest mt-1">Magnesium for sleep: which form is best?</h3>
+          <p class="text-sm text-ink/80 mt-2">Glycinate, citrate, threonate, oxide. We break down what the studies actually show — and how to pick the right one for your goal.</p>
+          <span class="text-sm text-amber2 font-semibold mt-3 inline-block">Read article →</span>
+        </div>
+      </a>
+    </section>
+
+    <!-- empty state (hidden) -->
+    <div hidden class="text-center py-16 max-w-md mx-auto">
+      <i data-lucide="search-x" class="w-10 h-10 mx-auto text-muted2"></i>
+      <h2 class="font-display text-2xl mt-4">No results for that search</h2>
+      <p class="text-muted2 mt-2 text-sm">Try a different term, or browse some of our most popular categories below.</p>
+      <div class="mt-6 flex flex-wrap justify-center gap-2">
+        <a class="chip" href="shop.html">Sleep</a><a class="chip" href="shop.html">Stress</a><a class="chip" href="shop.html">Hormones</a><a class="chip" href="shop.html">Energy</a>
+      </div>
+      <a href="product.html" class="btn btn-primary mt-6">Talk to a coach</a>
+    </div>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/include.js"></script>
+</body>
+</html>

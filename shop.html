@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en" data-drawer-open="false" data-cart-open="false" data-filters-open="false">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop all — Precision Wellness</title>
+  <meta name="description" content="Browse doctor-approved supplements, aromatherapy, devices, tests and personal care across the UAE." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,aspect-ratio"></script>
+  <script>
+    tailwind.config = { theme: { extend: {
+      colors: { forest:{DEFAULT:'#0E4F47',700:'#0A3B36'}, sage:{DEFAULT:'#A9C0B4',50:'#EFF3F0'}, amber2:{DEFAULT:'#C8924A',100:'#F5E7D1'}, cream:'#F7F2E8', ivory:'#FBF8F2', ink:'#1A1F1D', muted2:'#6B7470', line:'#E6DFD1', sale:'#B23A3A' },
+      fontFamily: { display:['Fraunces','Georgia','serif'], sans:['Inter','system-ui','sans-serif'] },
+      borderRadius: { '2xl':'18px', '3xl':'24px' }
+    } } }
+  </script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    /* mobile filters drawer */
+    .filters-drawer { position: fixed; inset-block: 0; inset-inline-start: 0; width: min(420px, 96vw); background: #fff; transform: translateX(-100%); transition: transform .25s ease; z-index: 80; display:flex; flex-direction:column;}
+    [data-filters-open="true"] .filters-drawer { transform: translateX(0); }
+    [data-filters-open="true"] .drawer-backdrop { opacity:1; pointer-events:auto; }
+  </style>
+</head>
+<body class="bg-cream text-ink antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 btn btn-primary">Skip to content</a>
+  <div data-include="partials/announcement.html"></div>
+  <div data-include="partials/header.html"></div>
+  <div data-include="partials/drawers.html"></div>
+
+  <main id="main">
+
+    <!-- breadcrumb + page header -->
+    <section class="container-prcn pt-6">
+      <nav class="text-xs text-muted2" aria-label="Breadcrumb">
+        <ol class="flex items-center gap-2 flex-wrap">
+          <li><a href="index.html" class="hover:text-forest">Home</a></li>
+          <li>/</li>
+          <li><a href="shop.html" class="hover:text-forest">Shop</a></li>
+          <li>/</li>
+          <li class="text-ink">Supplements</li>
+        </ol>
+      </nav>
+
+      <div class="mt-4 grid lg:grid-cols-[1fr_auto] gap-4 items-end">
+        <div>
+          <p class="eyebrow">Wellness Range</p>
+          <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl text-forest mt-2">Supplements</h1>
+          <p class="text-muted2 mt-3 max-w-2xl">Every supplement on our shelf is screened by our medical board for clinical evidence, ingredient quality and bioavailability — so you can trust the bottle in your hand.</p>
+        </div>
+        <p class="text-sm text-muted2"><strong class="text-ink">128</strong> products</p>
+      </div>
+    </section>
+
+    <!-- toolbar (mobile sticky) -->
+    <div class="container-prcn mt-6 sticky top-[64px] z-30 bg-cream/85 backdrop-blur supports-[backdrop-filter]:bg-cream/60 border-y border-line py-3 lg:static lg:bg-transparent lg:border-0 lg:py-0">
+      <div class="flex items-center gap-3 justify-between">
+        <button class="lg:hidden btn btn-outline btn-sm" data-action="open-filters">
+          <i data-lucide="sliders-horizontal" class="w-4 h-4"></i> Filters · 3
+        </button>
+        <div class="hidden lg:flex flex-wrap items-center gap-2">
+          <span class="chip chip-active">Sleep <i data-lucide="x" class="w-3 h-3"></i></span>
+          <span class="chip chip-active">Vegan <i data-lucide="x" class="w-3 h-3"></i></span>
+          <span class="chip chip-active">Under AED 200 <i data-lucide="x" class="w-3 h-3"></i></span>
+          <button class="text-xs text-muted2 hover:text-forest underline ml-2">Clear all</button>
+        </div>
+        <div class="flex items-center gap-2">
+          <label class="text-sm text-muted2 hidden sm:inline">Sort</label>
+          <select class="select !py-2 !pr-9 !pl-3 !text-sm !rounded-full !border-line">
+            <option>Featured</option>
+            <option>Bestselling</option>
+            <option>Newest</option>
+            <option>Price · low to high</option>
+            <option>Price · high to low</option>
+            <option>Top rated</option>
+          </select>
+          <div class="hidden sm:flex items-center border border-line rounded-full overflow-hidden">
+            <button class="p-2 bg-sage-50 text-forest" aria-label="Grid view"><i data-lucide="layout-grid" class="w-4 h-4"></i></button>
+            <button class="p-2 text-muted2" aria-label="List view"><i data-lucide="list" class="w-4 h-4"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="container-prcn mt-6 grid lg:grid-cols-[260px_1fr] gap-8 pb-20">
+      <!-- ====== component: filters sidebar ====== -->
+      <aside class="hidden lg:block">
+        <div class="sticky top-[88px] space-y-2">
+          <details class="acc border-b border-line" open><summary>Category</summary>
+            <ul class="pb-4 space-y-2 text-sm">
+              <li><label class="flex items-center justify-between gap-2"><span class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Vitamins & Minerals</span><span class="text-xs text-muted2">42</span></label></li>
+              <li><label class="flex items-center justify-between gap-2"><span class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest" checked> Supplements</span><span class="text-xs text-muted2">68</span></label></li>
+              <li><label class="flex items-center justify-between gap-2"><span class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Natural Remedies</span><span class="text-xs text-muted2">24</span></label></li>
+              <li><label class="flex items-center justify-between gap-2"><span class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Hormonal Therapies</span><span class="text-xs text-muted2">14</span></label></li>
+              <li><label class="flex items-center justify-between gap-2"><span class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Probiotics & Postbiotics</span><span class="text-xs text-muted2">18</span></label></li>
+            </ul>
+          </details>
+          <details class="acc border-b border-line" open><summary>Concern</summary>
+            <ul class="pb-4 space-y-2 text-sm">
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest" checked> Sleep</label></li>
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Stress & anxiety</label></li>
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Energy</label></li>
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Hormones</label></li>
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Gut</label></li>
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Immunity</label></li>
+            </ul>
+          </details>
+          <details class="acc border-b border-line"><summary>Form</summary>
+            <ul class="pb-4 space-y-2 text-sm">
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Capsule</label></li>
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Powder</label></li>
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Liquid</label></li>
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Topical</label></li>
+            </ul>
+          </details>
+          <details class="acc border-b border-line"><summary>Diet</summary>
+            <ul class="pb-4 space-y-2 text-sm">
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest" checked> Vegan</label></li>
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Halal-certified</label></li>
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Gluten-free</label></li>
+            </ul>
+          </details>
+          <details class="acc border-b border-line"><summary>Price (AED)</summary>
+            <div class="pb-4 space-y-3">
+              <div class="flex items-center gap-2">
+                <input class="input !py-2" placeholder="Min" />
+                <span class="text-muted2">—</span>
+                <input class="input !py-2" placeholder="Max" value="200" />
+              </div>
+              <input type="range" min="0" max="3000" value="200" class="w-full accent-forest">
+              <div class="flex justify-between text-xs text-muted2"><span>0</span><span>3,000</span></div>
+            </div>
+          </details>
+          <details class="acc"><summary>Rating</summary>
+            <ul class="pb-4 space-y-2 text-sm">
+              <li class="flex items-center gap-2"><span class="stars text-amber2"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></span> & up</li>
+              <li class="flex items-center gap-2"><span class="stars text-amber2"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></span> & up</li>
+              <li class="flex items-center gap-2"><span class="stars text-amber2"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></span> & up</li>
+            </ul>
+          </details>
+        </div>
+      </aside>
+
+      <!-- ====== mobile filters drawer ====== -->
+      <aside class="filters-drawer no-print lg:hidden" aria-label="Filters">
+        <div class="flex items-center justify-between p-4 border-b border-line">
+          <span class="font-display text-xl text-forest">Filters</span>
+          <button data-action="close-filters" aria-label="Close" class="p-2"><i data-lucide="x" class="w-6 h-6"></i></button>
+        </div>
+        <div class="p-4 overflow-y-auto flex-1 space-y-2">
+          <!-- intentionally re-using the same details blocks via duplication; in Woo we'd use a single template-part -->
+          <details class="acc border-b border-line" open><summary>Concern</summary>
+            <ul class="pb-4 space-y-2 text-sm">
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest" checked> Sleep</label></li>
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Stress & anxiety</label></li>
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Energy</label></li>
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Hormones</label></li>
+            </ul>
+          </details>
+          <details class="acc border-b border-line"><summary>Form</summary>
+            <ul class="pb-4 space-y-2 text-sm">
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Capsule</label></li>
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Powder</label></li>
+              <li><label class="flex items-center gap-2"><input type="checkbox" class="rounded border-line text-forest focus:ring-forest"> Liquid</label></li>
+            </ul>
+          </details>
+          <details class="acc border-b border-line"><summary>Price</summary>
+            <div class="pb-4 space-y-2"><input type="range" min="0" max="3000" value="200" class="w-full accent-forest"></div>
+          </details>
+        </div>
+        <div class="p-4 border-t border-line flex gap-2">
+          <button class="btn btn-outline btn-block">Clear</button>
+          <button class="btn btn-primary btn-block" data-action="close-filters">Show 128</button>
+        </div>
+      </aside>
+
+      <!-- product grid -->
+      <div>
+        <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+
+          <!-- Card 1 -->
+          <article class="card product-card group">
+            <a href="product.html" class="block product-image">
+              <span class="absolute top-3 left-3 z-10 badge badge-bestseller">Bestseller</span>
+              <button class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-ivory/90 backdrop-blur grid place-items-center" aria-label="Save"><i data-lucide="heart" class="w-4 h-4"></i></button>
+              <img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?q=80&w=800&auto=format&fit=crop" alt="" loading="lazy" />
+              <div class="quick-add"><button class="btn btn-primary btn-block btn-sm"><i data-lucide="plus" class="w-4 h-4"></i> Add</button></div>
+            </a>
+            <div class="p-4">
+              <p class="text-[11px] uppercase tracking-wider text-muted2">Natural Remedies</p>
+              <h3 class="font-display text-base sm:text-lg leading-tight mt-1">Pain Ease™</h3>
+              <div class="flex items-center gap-1 text-xs text-muted2 mt-1"><span class="stars"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i></span><span>4.9 (312)</span></div>
+              <div class="mt-2"><span class="price-now">AED 220</span><span class="price-was">AED 260</span></div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card product-card group">
+            <a href="product.html" class="block product-image">
+              <button class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-ivory/90 backdrop-blur grid place-items-center" aria-label="Save"><i data-lucide="heart" class="w-4 h-4"></i></button>
+              <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=800&auto=format&fit=crop" alt="" loading="lazy" />
+              <div class="quick-add"><button class="btn btn-primary btn-block btn-sm"><i data-lucide="plus" class="w-4 h-4"></i> Add</button></div>
+            </a>
+            <div class="p-4">
+              <p class="text-[11px] uppercase tracking-wider text-muted2">Vitamins</p>
+              <h3 class="font-display text-base sm:text-lg leading-tight mt-1">Vitamin D3 + K2</h3>
+              <div class="flex items-center gap-1 text-xs text-muted2 mt-1"><span class="stars"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star-half" class="w-3.5 h-3.5"></i></span><span>4.6 (425)</span></div>
+              <div class="mt-2"><span class="price-now">AED 130</span><span class="price-was">AED 153</span></div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card product-card group">
+            <a href="product.html" class="block product-image">
+              <span class="absolute top-3 left-3 z-10 badge badge-soft">Vegan</span>
+              <button class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-ivory/90 backdrop-blur grid place-items-center" aria-label="Save"><i data-lucide="heart" class="w-4 h-4"></i></button>
+              <img src="https://images.unsplash.com/photo-1584362917165-526a968579e8?q=80&w=800&auto=format&fit=crop" alt="" loading="lazy" />
+              <div class="quick-add"><button class="btn btn-primary btn-block btn-sm"><i data-lucide="plus" class="w-4 h-4"></i> Add</button></div>
+            </a>
+            <div class="p-4">
+              <p class="text-[11px] uppercase tracking-wider text-muted2">Sleep</p>
+              <h3 class="font-display text-base sm:text-lg leading-tight mt-1">Magnesium Glycinate 400 mg</h3>
+              <div class="flex items-center gap-1 text-xs text-muted2 mt-1"><span class="stars"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i></span><span>4.9 (210)</span></div>
+              <div class="mt-2"><span class="price-now">AED 95</span></div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card product-card group">
+            <a href="product.html" class="block product-image">
+              <span class="absolute top-3 left-3 z-10 badge badge-new">New</span>
+              <button class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-ivory/90 backdrop-blur grid place-items-center" aria-label="Save"><i data-lucide="heart" class="w-4 h-4"></i></button>
+              <img src="https://images.unsplash.com/photo-1631549916768-4119b4123a4f?q=80&w=800&auto=format&fit=crop" alt="" loading="lazy" />
+              <div class="quick-add"><button class="btn btn-primary btn-block btn-sm"><i data-lucide="plus" class="w-4 h-4"></i> Add</button></div>
+            </a>
+            <div class="p-4">
+              <p class="text-[11px] uppercase tracking-wider text-muted2">Hormonal Therapies</p>
+              <h3 class="font-display text-base sm:text-lg leading-tight mt-1">Adrenal Reset Complex</h3>
+              <div class="flex items-center gap-1 text-xs text-muted2 mt-1"><span class="stars"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i></span><span>5.0 (44)</span></div>
+              <div class="mt-2"><span class="price-now">AED 245</span></div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="card product-card group">
+            <a href="product.html" class="block product-image">
+              <button class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-ivory/90 backdrop-blur grid place-items-center" aria-label="Save"><i data-lucide="heart" class="w-4 h-4"></i></button>
+              <img src="https://images.unsplash.com/photo-1559757175-7cb2c0d4f80a?q=80&w=800&auto=format&fit=crop" alt="" loading="lazy" />
+              <div class="quick-add"><button class="btn btn-primary btn-block btn-sm"><i data-lucide="plus" class="w-4 h-4"></i> Add</button></div>
+            </a>
+            <div class="p-4">
+              <p class="text-[11px] uppercase tracking-wider text-muted2">Probiotics</p>
+              <h3 class="font-display text-base sm:text-lg leading-tight mt-1">10-Strain Probiotic 50B</h3>
+              <div class="flex items-center gap-1 text-xs text-muted2 mt-1"><span class="stars"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star-half" class="w-3.5 h-3.5"></i></span><span>4.5 (132)</span></div>
+              <div class="mt-2"><span class="price-now">AED 175</span></div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="card product-card group">
+            <a href="product.html" class="block product-image">
+              <span class="absolute top-3 left-3 z-10 badge badge-sale">−20%</span>
+              <button class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-ivory/90 backdrop-blur grid place-items-center" aria-label="Save"><i data-lucide="heart" class="w-4 h-4"></i></button>
+              <img src="https://images.unsplash.com/photo-1535914254981-b5012eebbd15?q=80&w=800&auto=format&fit=crop" alt="" loading="lazy" />
+              <div class="quick-add"><button class="btn btn-primary btn-block btn-sm"><i data-lucide="plus" class="w-4 h-4"></i> Add</button></div>
+            </a>
+            <div class="p-4">
+              <p class="text-[11px] uppercase tracking-wider text-muted2">Superfoods</p>
+              <h3 class="font-display text-base sm:text-lg leading-tight mt-1">Greens Daily Powder</h3>
+              <div class="flex items-center gap-1 text-xs text-muted2 mt-1"><span class="stars"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i></span><span>4.4 (76)</span></div>
+              <div class="mt-2"><span class="price-now">AED 248</span><span class="price-was">AED 310</span></div>
+            </div>
+          </article>
+
+          <!-- Card 7 -->
+          <article class="card product-card group">
+            <a href="product.html" class="block product-image">
+              <button class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-ivory/90 backdrop-blur grid place-items-center" aria-label="Save"><i data-lucide="heart" class="w-4 h-4"></i></button>
+              <img src="https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?q=80&w=800&auto=format&fit=crop" alt="" loading="lazy" />
+              <div class="quick-add"><button class="btn btn-primary btn-block btn-sm"><i data-lucide="plus" class="w-4 h-4"></i> Add</button></div>
+            </a>
+            <div class="p-4">
+              <p class="text-[11px] uppercase tracking-wider text-muted2">Immunity</p>
+              <h3 class="font-display text-base sm:text-lg leading-tight mt-1">Liposomal Vitamin C</h3>
+              <div class="flex items-center gap-1 text-xs text-muted2 mt-1"><span class="stars"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i></span><span>4.8 (98)</span></div>
+              <div class="mt-2"><span class="price-now">AED 165</span></div>
+            </div>
+          </article>
+
+          <!-- Card 8 -->
+          <article class="card product-card group">
+            <a href="product.html" class="block product-image">
+              <span class="absolute top-3 left-3 z-10 badge badge-soft">Bundle</span>
+              <button class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-ivory/90 backdrop-blur grid place-items-center" aria-label="Save"><i data-lucide="heart" class="w-4 h-4"></i></button>
+              <img src="https://images.unsplash.com/photo-1631549840906-c95dd2c53cdd?q=80&w=800&auto=format&fit=crop" alt="" loading="lazy" />
+              <div class="quick-add"><button class="btn btn-primary btn-block btn-sm"><i data-lucide="plus" class="w-4 h-4"></i> Add</button></div>
+            </a>
+            <div class="p-4">
+              <p class="text-[11px] uppercase tracking-wider text-muted2">Bundle</p>
+              <h3 class="font-display text-base sm:text-lg leading-tight mt-1">Sleep Stack — 3 products</h3>
+              <div class="flex items-center gap-1 text-xs text-muted2 mt-1"><span class="stars"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i></span><span>4.9 (61)</span></div>
+              <div class="mt-2"><span class="price-now">AED 360</span><span class="price-was">AED 430</span><span class="price-save block">Save AED 70</span></div>
+            </div>
+          </article>
+
+          <!-- Card 9 -->
+          <article class="card product-card group">
+            <a href="product.html" class="block product-image">
+              <button class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-ivory/90 backdrop-blur grid place-items-center" aria-label="Save"><i data-lucide="heart" class="w-4 h-4"></i></button>
+              <img src="https://images.unsplash.com/photo-1556228852-80b6e5eeff06?q=80&w=800&auto=format&fit=crop" alt="" loading="lazy" />
+              <div class="quick-add"><button class="btn btn-primary btn-block btn-sm"><i data-lucide="plus" class="w-4 h-4"></i> Add</button></div>
+            </a>
+            <div class="p-4">
+              <p class="text-[11px] uppercase tracking-wider text-muted2">Cognition</p>
+              <h3 class="font-display text-base sm:text-lg leading-tight mt-1">Omega-3 Triglyceride 1200 mg</h3>
+              <div class="flex items-center gap-1 text-xs text-muted2 mt-1"><span class="stars"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i></span><span>4.7 (193)</span></div>
+              <div class="mt-2"><span class="price-now">AED 210</span></div>
+            </div>
+          </article>
+
+          <!-- Card 10 -->
+          <article class="card product-card group">
+            <a href="product.html" class="block product-image">
+              <button class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-ivory/90 backdrop-blur grid place-items-center" aria-label="Save"><i data-lucide="heart" class="w-4 h-4"></i></button>
+              <img src="https://images.unsplash.com/photo-1583947581924-860bda6a26df?q=80&w=800&auto=format&fit=crop" alt="" loading="lazy" />
+              <div class="quick-add"><button class="btn btn-primary btn-block btn-sm"><i data-lucide="plus" class="w-4 h-4"></i> Add</button></div>
+            </a>
+            <div class="p-4">
+              <p class="text-[11px] uppercase tracking-wider text-muted2">Hair & Skin</p>
+              <h3 class="font-display text-base sm:text-lg leading-tight mt-1">Marine Collagen Peptides</h3>
+              <div class="flex items-center gap-1 text-xs text-muted2 mt-1"><span class="stars"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star-half" class="w-3.5 h-3.5"></i></span><span>4.5 (88)</span></div>
+              <div class="mt-2"><span class="price-now">AED 280</span></div>
+            </div>
+          </article>
+
+          <!-- Card 11 -->
+          <article class="card product-card group">
+            <a href="product.html" class="block product-image">
+              <span class="absolute top-3 left-3 z-10 badge badge-soft">Halal</span>
+              <button class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-ivory/90 backdrop-blur grid place-items-center" aria-label="Save"><i data-lucide="heart" class="w-4 h-4"></i></button>
+              <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=800&auto=format&fit=crop" alt="" loading="lazy" />
+              <div class="quick-add"><button class="btn btn-primary btn-block btn-sm"><i data-lucide="plus" class="w-4 h-4"></i> Add</button></div>
+            </a>
+            <div class="p-4">
+              <p class="text-[11px] uppercase tracking-wider text-muted2">Energy</p>
+              <h3 class="font-display text-base sm:text-lg leading-tight mt-1">CoQ10 Ubiquinol 100 mg</h3>
+              <div class="flex items-center gap-1 text-xs text-muted2 mt-1"><span class="stars"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i></span><span>4.4 (52)</span></div>
+              <div class="mt-2"><span class="price-now">AED 195</span></div>
+            </div>
+          </article>
+
+          <!-- Card 12 -->
+          <article class="card product-card group">
+            <a href="product.html" class="block product-image">
+              <button class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-ivory/90 backdrop-blur grid place-items-center" aria-label="Save"><i data-lucide="heart" class="w-4 h-4"></i></button>
+              <img src="https://images.unsplash.com/photo-1556228720-da4cc56b9f1f?q=80&w=800&auto=format&fit=crop" alt="" loading="lazy" />
+              <div class="quick-add"><button class="btn btn-primary btn-block btn-sm"><i data-lucide="plus" class="w-4 h-4"></i> Add</button></div>
+            </a>
+            <div class="p-4">
+              <p class="text-[11px] uppercase tracking-wider text-muted2">Joint</p>
+              <h3 class="font-display text-base sm:text-lg leading-tight mt-1">Joint Care Triple Complex</h3>
+              <div class="flex items-center gap-1 text-xs text-muted2 mt-1"><span class="stars"><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-current"></i></span><span>4.3 (40)</span></div>
+              <div class="mt-2"><span class="price-now">AED 220</span></div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- pagination -->
+        <nav class="mt-10 flex items-center justify-between gap-3" aria-label="Pagination">
+          <button class="btn btn-outline btn-sm"><i data-lucide="arrow-left" class="w-4 h-4"></i> Previous</button>
+          <ul class="hidden sm:flex items-center gap-1 text-sm">
+            <li><a href="#" class="w-9 h-9 grid place-items-center rounded-full bg-forest text-ivory">1</a></li>
+            <li><a href="#" class="w-9 h-9 grid place-items-center rounded-full hover:bg-sage-50">2</a></li>
+            <li><a href="#" class="w-9 h-9 grid place-items-center rounded-full hover:bg-sage-50">3</a></li>
+            <li class="px-2 text-muted2">…</li>
+            <li><a href="#" class="w-9 h-9 grid place-items-center rounded-full hover:bg-sage-50">11</a></li>
+          </ul>
+          <button class="btn btn-primary btn-sm">Next <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="assets/js/include.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!-- ====== mobile drawer ====== -->
+<div class="drawer-backdrop no-print" data-action="close-menu" aria-hidden="true"></div>
+<aside class="drawer no-print" aria-label="Mobile menu">
+  <div class="flex items-center justify-between p-4 border-b border-line">
+    <span class="font-display text-xl text-forest">Menu</span>
+    <button data-action="close-menu" aria-label="Close menu" class="p-2"><i data-lucide="x" class="w-6 h-6"></i></button>
+  </div>
+  <div class="p-4 space-y-1 overflow-y-auto">
+    <div class="relative mb-4">
+      <i data-lucide="search" class="w-5 h-5 absolute left-3 top-1/2 -translate-y-1/2 text-muted2"></i>
+      <input class="input pl-10" placeholder="Search supplements, tests…" />
+    </div>
+    <details class="acc border-b border-line"><summary>Wellness Range</summary>
+      <ul class="pb-4 space-y-2 text-ink/80 text-sm">
+        <li><a href="shop.html">Vitamins & Minerals</a></li>
+        <li><a href="shop.html">Supplements</a></li>
+        <li><a href="shop.html">Natural Remedies</a></li>
+        <li><a href="shop.html">Hormonal Therapies</a></li>
+        <li><a href="shop.html">Superfoods</a></li>
+        <li><a href="shop.html">Probiotics & Postbiotics</a></li>
+      </ul>
+    </details>
+    <details class="acc border-b border-line"><summary>Aromatherapy</summary>
+      <ul class="pb-4 space-y-2 text-ink/80 text-sm">
+        <li><a href="shop.html">Essential Oils</a></li>
+        <li><a href="shop.html">Speciality Blends</a></li>
+      </ul>
+    </details>
+    <details class="acc border-b border-line"><summary>Personal Care</summary>
+      <ul class="pb-4 space-y-2 text-ink/80 text-sm">
+        <li><a href="shop.html">Skin</a></li><li><a href="shop.html">Hair</a></li><li><a href="shop.html">Sleep & Relaxation</a></li>
+      </ul>
+    </details>
+    <details class="acc border-b border-line"><summary>Wellness Devices</summary>
+      <ul class="pb-4 space-y-2 text-ink/80 text-sm">
+        <li><a href="product.html">Nurosym</a></li><li><a href="product.html">Whole-Body Red Light</a></li>
+      </ul>
+    </details>
+    <details class="acc border-b border-line"><summary>Tests · Precision Chex™</summary>
+      <ul class="pb-4 space-y-2 text-ink/80 text-sm">
+        <li><a href="product.html">Skinwellgx</a></li><li><a href="product.html">Fitwellgx</a></li><li><a href="product.html">Gut Chex</a></li><li><a href="product.html">Eatwellgx</a></li><li><a href="product.html">Cortisol Chex</a></li>
+      </ul>
+    </details>
+    <a class="block py-3 border-b border-line" href="product.html">Coaching</a>
+    <a class="block py-3 border-b border-line" href="shop.html">Bundles</a>
+    <a class="block py-3 border-b border-line" href="#">Journal</a>
+    <div class="pt-4 flex gap-2">
+      <a href="account.html" class="btn btn-outline btn-block">Sign in</a>
+      <a href="account.html" class="btn btn-primary btn-block">Account</a>
+    </div>
+  </div>
+</aside>
+
+<!-- ====== cart drawer ====== -->
+<aside class="cart-drawer no-print" aria-label="Cart">
+  <div class="flex items-center justify-between p-4 border-b border-line">
+    <span class="font-display text-xl text-forest">Your bag (2)</span>
+    <button data-action="close-cart" aria-label="Close cart" class="p-2"><i data-lucide="x" class="w-6 h-6"></i></button>
+  </div>
+  <div class="p-4 border-b border-line">
+    <div class="progress" data-free-shipping data-subtotal="380" data-threshold="500"><span style="width:76%"></span></div>
+    <p class="text-sm text-muted2 mt-2" data-free-shipping-note>You're AED 120 away from free shipping.</p>
+  </div>
+  <div class="flex-1 overflow-y-auto p-4 space-y-4">
+    <div class="flex gap-3">
+      <img src="https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?q=80&w=240&auto=format&fit=crop" class="w-20 h-20 rounded-xl object-cover" alt="">
+      <div class="flex-1">
+        <p class="font-medium leading-tight">Pain Ease™</p>
+        <p class="text-xs text-muted2">60 capsules · 1 month</p>
+        <div class="flex items-center justify-between mt-2">
+          <div class="qty">
+            <button data-qty="dec" aria-label="Decrease">−</button>
+            <input type="text" value="1" inputmode="numeric">
+            <button data-qty="inc" aria-label="Increase">+</button>
+          </div>
+          <span class="font-semibold">AED 220</span>
+        </div>
+      </div>
+    </div>
+    <div class="flex gap-3">
+      <img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=240&auto=format&fit=crop" class="w-20 h-20 rounded-xl object-cover" alt="">
+      <div class="flex-1">
+        <p class="font-medium leading-tight">Lavender Pure Essential Oil</p>
+        <p class="text-xs text-muted2">15 ml</p>
+        <div class="flex items-center justify-between mt-2">
+          <div class="qty">
+            <button data-qty="dec" aria-label="Decrease">−</button>
+            <input type="text" value="2" inputmode="numeric">
+            <button data-qty="inc" aria-label="Increase">+</button>
+          </div>
+          <span class="font-semibold">AED 160</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-line p-4 space-y-3">
+    <div class="flex items-center justify-between text-sm"><span>Subtotal</span><span class="font-semibold">AED 380.00</span></div>
+    <div class="flex items-center justify-between text-xs text-muted2"><span>Tax included</span><span>Shipping at checkout</span></div>
+    <a href="checkout.html" class="btn btn-primary btn-block btn-lg">Checkout · AED 380</a>
+    <a href="cart.html" class="btn btn-ghost btn-block">View cart</a>
+  </div>
+</aside>
+
+<!-- ====== search overlay ====== -->
+<div id="search-overlay" hidden class="fixed inset-0 z-[90] bg-ink/60 flex items-start justify-center p-4 sm:p-12 no-print">
+  <div class="bg-ivory rounded-3xl w-full max-w-2xl shadow-2xl border border-line">
+    <div class="flex items-center p-3 border-b border-line gap-2">
+      <i data-lucide="search" class="w-5 h-5 text-muted2 ml-2"></i>
+      <input type="search" class="flex-1 bg-transparent border-0 outline-none px-2 py-2 text-base" placeholder="Try 'magnesium' or 'cortisol test'…">
+      <button class="btn btn-ghost btn-sm" data-action="close-search">Esc</button>
+    </div>
+    <div class="p-4 grid sm:grid-cols-2 gap-3">
+      <div>
+        <p class="eyebrow mb-2">Trending</p>
+        <ul class="space-y-1 text-sm">
+          <li><a class="hover:text-forest" href="search.html">Magnesium glycinate</a></li>
+          <li><a class="hover:text-forest" href="search.html">Cortisol test</a></li>
+          <li><a class="hover:text-forest" href="search.html">Red light therapy</a></li>
+          <li><a class="hover:text-forest" href="search.html">Vitamin D3 + K2</a></li>
+          <li><a class="hover:text-forest" href="search.html">Nurosym</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow mb-2">Top categories</p>
+        <ul class="space-y-1 text-sm">
+          <li><a class="hover:text-forest" href="shop.html">Hormonal therapies</a></li>
+          <li><a class="hover:text-forest" href="shop.html">Probiotics</a></li>
+          <li><a class="hover:text-forest" href="shop.html">Sleep support</a></li>
+          <li><a class="hover:text-forest" href="shop.html">Bundles</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
