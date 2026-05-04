@@ -22,6 +22,9 @@
 
 html { scroll-behavior: smooth; }
 
+/* The HTML `hidden` attribute must beat utility classes like .flex / .grid. */
+[hidden] { display: none !important; }
+
 body {
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   color: var(--prcn-ink);
